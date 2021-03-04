@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
+
 function FruitImages(props) {
   const [category, setCategory] = useState('')
   // let categoryName = ['mental health', 'nutrition', 'fitness', 'sexual health']
 //pass health category props to each link
-  let hoverHandler = (e) => {
+  let hoverInHandler = (e) => {
     setCategory(e.value)
-    console.log(category)
+    console.log(e.value)
+  }
+
+  let hoverOutHandler = () => {
+    console.log("hover out")
   }
 
   return (
@@ -16,12 +21,15 @@ function FruitImages(props) {
         {category}
       </div>
       <div className="fruitLinks">
-          <Link to='/trythis'><img onMouseEnter={() => hoverHandler} src='/grapes.png' alt='clickable grapes' value='mental health'/></Link>
-          <Link to='/trythis'><img src='/banana.png' alt='clickable bananas'/></Link>
-          <Link to='/trythis'><img src='/mango.png' alt='clickable mango'/></Link>
-          <Link to='/trythis'><img src='/orange.png' alt='clickable orange'/></Link>
-          <img src='/bowl.png' alt='bowl' />
-        </div>
+          <Link className='grapesImg' to='/trythis'><img className='fruitImg' onMouseLeave={hoverOutHandler} onMouseEnter={hoverInHandler} src='/grapes.png' alt='clickable grapes' value='mental health'/></Link>
+          <Link className='bananaImg' to='/trythis'><img className='fruitImg' src='/banana.png' alt='clickable bananas'/></Link>
+          <Link className='mangoImg' to='/trythis'><img className='fruitImg' src='/mango.png' alt='clickable mango'/></Link>
+          <Link className='orangeImg' to='/trythis'><img className='fruitImg' src='/orange.png' alt='clickable orange'/></Link>
+          
+      </div>
+      <div className='bowlDiv'>
+        <img className='bowlImg' src='/bowl.png' alt='bowl' />
+      </div> 
     </div>
         
   );

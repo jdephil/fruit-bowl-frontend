@@ -3,7 +3,7 @@ import FruitImages from './FruitImages'
 function Fruitbowl(props) {
   return (
     <div>
-      <header className='App-header'>fruitbowl</header>
+      <header className='App-header'>Fruitbowl</header>
         <FruitImages />
     </div>
       
