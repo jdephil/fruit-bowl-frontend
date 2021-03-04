@@ -1,19 +1,25 @@
 import './App.css';
-import Fruitbowl from './Fruitbowl'
-// import grapes from '../public/grapes.png';
-// import banana from '../public/assets/imgs/banana.png';
-// import mango from '../public/assets/imgs/mango.png';
-// import orange from '../public/assets/imgs/orange.png';
-// import bowl from '../public/assets/imgs/bowl.png';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Fruitbowl from './Fruitbowl';
+import TryThis from './TryThis';
+
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <header className="App-header">
         fruitbowl
         <Fruitbowl />
       </header>
-      </div>
+        <Switch>
+          <Route path='/' component={ Fruitbowl } />
+          <Route path='/trythis' component={ TryThis } />
+        </Switch>
+      </BrowserRouter>
+
+      
+      </div> 
   );
 }
 
