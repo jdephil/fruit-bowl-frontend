@@ -77,6 +77,10 @@ a {
   justify-content: center;
 }
 
+#learnMoreLink {
+  color: #363636;
+}
+
 #learnMoreArrow {
   font-size: 1.5em;
   margin-top: .1em;

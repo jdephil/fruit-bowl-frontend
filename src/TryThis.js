@@ -22,9 +22,11 @@ class TryThis extends React.Component {
         <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
         <h1 className="tryThisName">Try this: {this.state.name}</h1>
         {/* <img src for fruit /> */}
-        <div className="learnMore">
-          Learn more <span id="learnMoreArrow">&#62;</span>
-        </div>
+        <a href={this.state.url}>
+          <div className="learnMore">
+              Learn more <span id="learnMoreArrow">&#62;</span>
+          </div>
+        </a>
         <a href="#" id="tryAgain">Not interested? Try again!</a>
       </div>
     )
