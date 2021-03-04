@@ -6,8 +6,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         Fruit Bowl forthcoming!
+        <h6>
+        © Group 9 Productions, LLC
+        </h6>
       </header>
-    </div>
+      </div>
   );
 }
 
