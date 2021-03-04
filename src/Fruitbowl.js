@@ -1,6 +1,8 @@
 
 function Fruitbowl(props) {
   return (
+    <div>
+      <header className='App-header'>fruitbowl</header>
         <div className="fruitbowl">
           <img src='/grapes.png' />
           <img src='/banana.png'/>
@@ -8,6 +10,8 @@ function Fruitbowl(props) {
           <img src='/orange.png' />
           <img src='/bowl.png' />
         </div>
+    </div>
+      
   );
 }
 
