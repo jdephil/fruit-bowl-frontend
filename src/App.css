@@ -1,58 +1,67 @@
-.App {
-  text-align: center;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+body {
   background-color: #36075D;
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  min-height: 100vh;
+  
+}
+
+
+
+.App-header {
+  font-weight: bolder;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: ghostwhite;
+  margin-top: 20%;
+  font-size: 50px;
+  color: #FEFEFE;
 }
 
 /* Fruitbowl Image */
 .fruitbowl {
-  position: absolute;
-  width: 306.48px;
-  height: 125px;
-  left: 48px;
-  top: 384.78px;
-  transform: rotate(-5.76deg);
+  margin-top: 30vh;
+  justify-content: center;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.fruitLinksDiv {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr;
+   justify-content: center;
+   align-items: center;
 }
 
-/* Try This Page */
-.tryThisContainer {
-  background-color: #36075D;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: ghostwhite;
+.fruitLink {
+  grid-row: 1;
+}
+.fruitImg {
+  width: 95%;
+  margin-bottom: 20px;
 }
 
-a {
-  color: ghostwhite;
-  text-decoration: none;
+.grapesImg {
+  grid-column: 3;
+}
+
+.bananaImg {
+   grid-column: 4;
+ }
+
+ .mangoImg {
+   grid-column: 5;
+ }
+
+ .orangeImg {
+   grid-column: 6;
+ }
+
+.bowlImg {
+  grid-row: 1;
+  grid-column: 2/9;
+  z-index: 2;
+  
+
 }
 
 #goBack {

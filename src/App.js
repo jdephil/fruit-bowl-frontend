@@ -1,5 +1,5 @@
 import './App.css';
-import { Link, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Fruitbowl from './Fruitbowl'
 import TryThis from './TryThis'
 
@@ -7,12 +7,12 @@ import TryThis from './TryThis'
 function App() {
   return (
     <div className="App">
-      <main>
-        {/* <Switch> */}
+      <BrowserRouter>
+        <Switch>
             <Route exact path='/' component={Fruitbowl} />
             <Route exact path='/trythis' component={TryThis} />
-        {/* </Switch> */}
-      </main>
+        </Switch>
+        </BrowserRouter>
     </div>
   );
 }
