@@ -20,15 +20,15 @@ function FruitImages(props) {
       <div className='category'>
         {category}
       </div>
-      <div className="fruitLinks">
-          <Link className='grapesImg' to='/trythis'><img className='fruitImg' onMouseLeave={hoverOutHandler} onMouseEnter={hoverInHandler} src='/grapes.png' alt='clickable grapes' value='mental health'/></Link>
-          <Link className='bananaImg' to='/trythis'><img className='fruitImg' src='/banana.png' alt='clickable bananas'/></Link>
-          <Link className='mangoImg' to='/trythis'><img className='fruitImg' src='/mango.png' alt='clickable mango'/></Link>
-          <Link className='orangeImg' to='/trythis'><img className='fruitImg' src='/orange.png' alt='clickable orange'/></Link>
-          
+      <div className="fruitLinksDiv">
+          <Link className='fruitLink grapesImg' to='/trythis'><img className='fruitImg' onMouseLeave={hoverOutHandler} onMouseEnter={hoverInHandler} src='/grapes.png' alt='clickable grapes' value='mental health'/></Link>
+          <Link className='fruitLink bananaImg' to='/trythis'><img className='fruitImg' src='/banana.png' alt='clickable bananas'/></Link>
+          <Link className='fruitLink mangoImg' to='/trythis'><img className='fruitImg' src='/mango.png' alt='clickable mango'/></Link>
+          <Link className='fruitLink orangeImg' to='/trythis'><img className='fruitImg' src='/orange.png' alt='clickable orange'/></Link>
+          <img className='fruitLink bowlImg' src='/bowl.png' alt='bowl' />
       </div>
       <div className='bowlDiv'>
-        <img className='bowlImg' src='/bowl.png' alt='bowl' />
+        
       </div> 
     </div>
         

@@ -20,21 +20,46 @@ body {
 /* Fruitbowl Image */
 .fruitbowl {
   margin-top: 30vh;
+  justify-content: center;
   
 }
 
-.fruitLinks {
-  display: flex;
+.fruitLinksDiv {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr;
    justify-content: center;
+   align-items: center;
 }
 
+.fruitLink {
+  grid-row: 1;
+}
 .fruitImg {
-  width: 80%;
+  width: 95%;
+  margin-bottom: 20px;
 }
 
-.bowlDiv {
-  display: flex;
-  justify-content: center;
+.grapesImg {
+  grid-column: 3;
 }
 
+.bananaImg {
+   grid-column: 4;
+ }
 
+ .mangoImg {
+   grid-column: 5;
+ }
+
+ .orangeImg {
+   grid-column: 6;
+ }
+
+.bowlImg {
+  grid-row: 1;
+  grid-column: 2/9;
+  z-index: 2;
+  
+
+}
