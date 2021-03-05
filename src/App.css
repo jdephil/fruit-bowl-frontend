@@ -60,6 +60,59 @@ body {
   grid-row: 1;
   grid-column: 2/9;
   z-index: 2;
-  
+}
 
+/* Try This Page */
+.tryThisContainer {
+  background-color: #36075D;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: ghostwhite;
+}
+
+a {
+  color: ghostwhite;
+  text-decoration: none;
+}
+
+#goBack {
+  align-self: flex-start;
+  padding: 1em;
+}
+
+.tryThisName {
+  padding: .5em;
+}
+
+.learnMore {
+  background-color: #F1BB87;
+  color: #363636;
+  font-size: 1.25em;
+  border-radius: 12px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  width: 299px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#learnMoreLink {
+  color: #363636;
+}
+
+#learnMoreArrow {
+  font-size: 1.5em;
+  margin-top: .1em;
+  padding-left: .5em;
+}
+
+#tryAgain {
+  padding-top: 2em;
+  text-decoration: underline;
 }
