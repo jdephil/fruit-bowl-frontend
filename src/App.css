@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20%;
+  margin-top: 25%;
   font-size: 50px;
   color: #FEFEFE;
 }
@@ -29,7 +29,6 @@ body {
   flex-direction: column;
   margin-top: 30vh;
   justify-content: center;
-  /* border: 2px dashed red; */
   text-align: center;
 
 }
@@ -38,15 +37,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 2px dashed yellow; */
   position: relative;
   width: 70%;
   align-self: center;
 }
 
-/* .fruitLink {
-  grid-row: 1;
-} */
+
 .fruitImg {
   width: 100%;
   margin-bottom: 20px;
@@ -54,27 +50,18 @@ body {
 
 .grapesImg {
   padding-left: 12px;
+  font-size: 5px;
+  overflow: hidden;
 }
 
-/* .bananaImg {
-   grid-column: 4;
- }
-
- .mangoImg {
-   grid-column: 5;
- }
-
- .orangeImg {
-   grid-column: 6;
- } */
 
 .bowlDiv {
   margin-top: -80px;
   grid-row: 1;
   grid-column: 2/9;
   z-index: 2;
-  /* border: 2px dashed ghostwhite; */
   position: relative;
+  pointer-events: none;
 }
 
 /* Try This Page */
