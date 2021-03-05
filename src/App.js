@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <main>
         {/* <Switch> */}
-            <Route path='/' exact component={Fruitbowl} />
-            <Route path='/trythis' component={TryThis} />
+            <Route exact path='/' component={Fruitbowl} />
+            <Route exact path='/trythis' component={TryThis} />
         {/* </Switch> */}
       </main>
     </div>
