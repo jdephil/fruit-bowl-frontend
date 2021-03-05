@@ -36,12 +36,13 @@ body {
   grid-row: 1;
 }
 .fruitImg {
-  width: 95%;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .grapesImg {
-  grid-column: 3;
+  grid-column: 2/4;
+  margin-bottom: 30px;
 }
 
 .bananaImg {
