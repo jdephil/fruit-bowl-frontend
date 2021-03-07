@@ -5,14 +5,23 @@ import { useState } from 'react'
 
 function FruitImages(props) {
   const [category, setCategory] = useState('')
-  // let categoryName = ['mental health', 'nutrition', 'fitness', 'sexual health']
-//pass health category props to each link
+  const allTips = props.tips.map((tip, i) => {
+    if (tip.category === "Mental Health") {
+      return tip
+    } else if (tip.category === "Relational Health") {
+      return tip
+    } else {
+      console.log('done')
+    }
+  })
+ 
   let hoverInHandler = (e) => {
-    setCategory(e.value)
-    console.log(e.value)
+    setCategory(e.target.cat)
+    console.log(e.target.src)
+    console.log("hover in")
   }
 
-  let hoverOutHandler = () => {
+  let clickHandler = () => {
     console.log("hover out")
   }
 
@@ -22,7 +31,7 @@ function FruitImages(props) {
         {category}
       </div>
       <div className="fruitLinksDiv">
-          <Link className='fruitLink grapesImg' to='/trythis'><img className='fruitImg' onMouseLeave={hoverOutHandler} onMouseEnter={hoverInHandler} src='/grapes.png' alt='clickable grapes' value='mental health'/></Link>
+          <Link className='fruitLink grapesImg' to='/trythis'><img className='fruitImg' onClick={clickHandler} src='/grapes.png' alt='clickable grapes' /></Link>
           <Link className='fruitLink bananaImg' to='/trythis'><img className='fruitImg' src='/banana.png' alt='clickable bananas'/></Link>
           <Link className='fruitLink mangoImg' to='/trythis'><img className='fruitImg' src='/mango.png' alt='clickable mango'/></Link>
           <Link className='fruitLink orangeImg' to='/trythis'><img className='fruitImg' src='/orange.png' alt='clickable orange'/></Link>
