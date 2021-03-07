@@ -25,13 +25,12 @@ function FruitImages(props) {
           <Link className='fruitLink bananaImg' to='/trythis'><img className='fruitImg' src='/banana.png' alt='clickable bananas'/></Link>
           <Link className='fruitLink mangoImg' to='/trythis'><img className='fruitImg' src='/mango.png' alt='clickable mango'/></Link>
           <Link className='fruitLink orangeImg' to='/trythis'><img className='fruitImg' src='/orange.png' alt='clickable orange'/></Link>
-          <img className='fruitLink bowlImg' src='/bowl.png' alt='bowl' />
       </div>
       <div className='bowlDiv'>
-        
-      </div> 
+        <img className='bowlImg' src='/bowl.png' alt='bowl' />
+      </div>
     </div>
-        
+
   );
 }
 

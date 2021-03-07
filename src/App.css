@@ -2,65 +2,66 @@
 body {
   background-color: #36075D;
   font-family: 'Poppins', sans-serif;
-  
+
 }
 
+*{
+  /* border: 1px solid pink; */
+}
 
+.header{
+  /* border: 2px solid green; */
+}
 
 .App-header {
   font-weight: bolder;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20%;
+  margin-top: 25%;
   font-size: 50px;
   color: #FEFEFE;
 }
 
 /* Fruitbowl Image */
 .fruitbowl {
+  display: flex;
+  flex-direction: column;
   margin-top: 30vh;
   justify-content: center;
-  
+  text-align: center;
+
 }
 
 .fruitLinksDiv {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 1fr;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 70%;
+  align-self: center;
 }
 
-.fruitLink {
-  grid-row: 1;
-}
+
 .fruitImg {
   width: 100%;
   margin-bottom: 20px;
 }
 
 .grapesImg {
-  grid-column: 2/4;
-  margin-bottom: 30px;
+  padding-left: 12px;
+  font-size: 5px;
+  overflow: hidden;
 }
 
-.bananaImg {
-   grid-column: 4;
- }
 
- .mangoImg {
-   grid-column: 5;
- }
-
- .orangeImg {
-   grid-column: 6;
- }
-
-.bowlImg {
+.bowlDiv {
+  margin-top: -80px;
   grid-row: 1;
   grid-column: 2/9;
   z-index: 2;
+  position: relative;
+  pointer-events: none;
 }
 
 /* Try This Page */
