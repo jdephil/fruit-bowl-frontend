@@ -5,8 +5,6 @@ body {
   
 }
 
-
-
 .App-header {
   font-weight: bolder;
   display: flex;
@@ -64,7 +62,22 @@ body {
   
 }
 
-
+/* Try This Page */
+.tryThisContainer {
+  background-color: #36075D;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: ghostwhite;
+}
+a {
+  color: ghostwhite;
+  text-decoration: none;
+}
 
 #goBack {
   align-self: flex-start;
