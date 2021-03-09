@@ -26,9 +26,7 @@ function FruitImages(props) {
           url: tip.url, 
           urlTitle: tip.urlTitle
       })
-        return("return")
-      
-      })
+       
   })
 })
     

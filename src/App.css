@@ -22,7 +22,11 @@ body {
   font-size: 50px;
   color: #FEFEFE;
 }
-
+.category{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Fruitbowl Image */
 .fruitbowl {
   display: flex;
