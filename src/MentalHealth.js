@@ -4,40 +4,39 @@ import {Link} from 'react-router-dom';
 import './App.css'
 
 function MentalHealth() {
-    const [tip, setTip] = useState([])
-    useEffect(() => {
-        fetchTips();
-    }, []);
+    const [tips, setTips] = useState([
+           
+            ]);
+            // const fetchTips = async () => {
+    //     const data = await fetch('http://fruitbowl-backend.herokuapp.com/api/tips');
+    //     const tips = await data.json();
+    //     setTips(tips)
+    // }
+    const [tipP, setTipP] = useState([])
     let newArr = []
-    const fetchTips = () => {
+    useEffect(() => {
+        fetchTips()
+    }, []);
+    const fetchTips = (callback) => {
         axios.get('http://fruitbowl-backend.herokuapp.com/api/tips')
-          .then(function (response) {
+        .then(function (response) {
               console.log(response.data)
               const result = response.data.map(function(tip) {
-                  if (tip.category === 'Mental Health') {
+                    if (tip.category === 'Mental Health') {
                       newArr.push(tip)
-                  }
-              })
-            newArr.push(response.data)
-            setTip(response.data)
-          })
+                  }    
+            })
+        }).then (() => {
+            setTipP(newArr[Math.floor(Math.random() * newArr.length)].title)
+        })
     }
-    console.log(tip)
-    // const randomTitle = () => {
-    //     let randomIndex = Math.floor(Math.random() * newArr.length)
-    //     let tryThisTitle = newArr[0]
-    //     console.log(tryThisTitle)
-    // }
-    // randomTitle();
+    if (!tipP) {
+        return (<p>"loading"</p>)
+    } 
     return (
         <div className="tryThisContainer">
           <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
-          {tip.map(index => {
-              if (index.category === 'Mental Health') {
-                  return index
-              }
-          })}
-            <h1 className="tryThisName">Try this: </h1>
+            <h1 className="tryThisName">Try this: {tipP}</h1>
             <Link>
                 <div className="learnMore">
                     Learn more <span id="learnMoreArrow">&#62;</span>
