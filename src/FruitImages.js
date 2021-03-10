@@ -1,7 +1,5 @@
-import MentalHealth from './MentalHealth'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
 
 function FruitImages() {
@@ -17,18 +15,7 @@ function FruitImages() {
   }
 ])
 
-    // useEffect(() => {
-    //     fetch('http://fruitbowl-backend.herokuapp.com/api/tips')
-    //     .then(response => response.json())
-    //     .then(({ data: tips}) => {
-    //       setTips(tips)
-    //     })
-    // }, []);
-    let linkClickHandler = () => {
-    
-  
-      
-    }
+    let linkClickHandler = () => {}
 
     let clickHandler = (e) => {
       if (e.target.src.includes('/grapes.png')) {
@@ -36,25 +23,15 @@ function FruitImages() {
         setToLink('/mentalhealth')
       } else if (e.target.src.includes('/banana.png')) {
         setCategoryDiv('Relational Health')
+        setToLink('/relationalhealth')
       } else if (e.target.src.includes('/mango.png')) {
         setCategoryDiv('Nutrition')
+        setToLink('/nutrition')
       } else if (e.target.src.includes('/orange.png')) {
         setCategoryDiv('Physical Fitness')
+        setToLink('/fitness')
       }
-    }
-    // const fetchTips = async () => {
-    //   const data = await fetch('http://fruitbowl-backend.herokuapp.com/api/tips');
-    //   const tips = await data.json();
-    //   setTipsData(tips)
-    //   // console.log(tips)
-    //   console.log(setTipsData)
-      
-    // }
-    
-        
-          
-        
-    
+    }    
     return (
       <div>
         <div className='category'>
