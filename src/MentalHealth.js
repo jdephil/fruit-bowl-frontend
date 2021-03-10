@@ -27,7 +27,7 @@ function MentalHealth() {
                   }    
             })
         }).then (() => {
-            setTipP(newArr[Math.floor(Math.random() * newArr.length)].title)
+            setTipP(newArr[Math.floor(Math.random() * newArr.length)])
         })
     }
     if (!tipP) {
@@ -36,12 +36,12 @@ function MentalHealth() {
     return (
         <div className="tryThisContainer">
           <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
-            <h1 className="tryThisName">Try this: {tipP}</h1>
-            <Link>
+            <h1 className="tryThisName">Try this: {tipP.title}</h1>
+            <a href={tipP.url}>
                 <div className="learnMore">
                     Learn more <span id="learnMoreArrow">&#62;</span>
                 </div>
-            </Link>
+            </a>
           <a href="#" id="tryAgain">Not interested? Try again!</a>
         </div>
       )
