@@ -1,14 +1,14 @@
 import FruitImages from './FruitImages'
-import TipsData from './TipsData'
 
-function Fruitbowl(props) {
-  let tips = TipsData.tips
+
+function Fruitbowl() {
+  
    
   return (
     <div className="home-page">
       <header className='App-header'>fruitbowl</header>
       <div className="fruitsnbowl">
-        <FruitImages tips={tips}/>
+        <FruitImages />
       </div>
     </div>
   );
