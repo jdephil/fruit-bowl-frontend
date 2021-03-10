@@ -1,38 +1,69 @@
+import MentalHealth from './MentalHealth'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import TipsData from './TipsData'
 
 function FruitImages(props) {
-  const [category, setCategory] = useState('')
-  // let categoryName = ['mental health', 'nutrition', 'fitness', 'sexual health']
-//pass health category props to each link
-  let hoverInHandler = (e) => {
-    setCategory(e.value)
-    console.log(e.value)
-  }
-
-  let hoverOutHandler = () => {
-    console.log("hover out")
-  }
-
-  return (
-    <div className="fruitbowl">
-      <div className='category'>
-        {category}
-      </div>
+  const [categoryDiv, setCategoryDiv] = useState('')
+  const [tipsByCategory, setTipsByCategory] = useState('')
+  const [tipsData, setTipsData] = useState({
+    title: '', 
+    category: '',
+    url: '',
+    urlTitle: ''
+  })
+  
+//   useEffect(() => {
+//     axios.get('http://fruitbowl-backend.herokuapp.com/api/tips')
+//     .then(res => {
+//       res.data.map(tip => {
+//         let tipTitle = tip.title
+//         setTipsData({
+//           title: tipTitle, 
+//           category: tip.category, 
+//           url: tip.url, 
+//           urlTitle: tip.urlTitle
+//       })
+//     })
+//   })
+// })
+    let clickHandler = (e) => {
+      // if (e.target.src.includes('/grapes.png')) {
+      //   setCategoryDiv('Mental Health')
+      // } else if (e.target.src.includes('/banana.png')) {
+      //   setCategoryDiv('Relational Health')
+      // } else if (e.target.src.includes('/mango.png')) {
+      //   setCategoryDiv('Nutrition')
+      // } else if (e.target.src.includes('/orange.png')) {
+      //   setCategoryDiv('Physical Fitness')
+      // }
+    }
+    
+    return (
+      <div>
+        <div className='category'>
+          <Link tipsData={tipsData} to='/trythis'>{categoryDiv}</Link>
+        </div>
+      <div className="fruitbowl">
+      
       <div className="fruitLinksDiv">
-          <Link className='fruitLink grapesImg' to='/trythis'><img className='fruitImg' onMouseLeave={hoverOutHandler} onMouseEnter={hoverInHandler} src='/grapes.png' alt='clickable grapes' value='mental health'/></Link>
-          <Link className='fruitLink bananaImg' to='/trythis'><img className='fruitImg' src='/banana.png' alt='clickable bananas'/></Link>
-          <Link className='fruitLink mangoImg' to='/trythis'><img className='fruitImg' src='/mango.png' alt='clickable mango'/></Link>
-          <Link className='fruitLink orangeImg' to='/trythis'><img className='fruitImg' src='/orange.png' alt='clickable orange'/></Link>
-          <img className='fruitLink bowlImg' src='/bowl.png' alt='bowl' />
+          <Link to="/mentalhealth">
+          <div className='fruitLink grapesImg'><img className='fruitImg' onClick={clickHandler} src='/grapes.png' alt='clickable grapes' /></div>
+          </Link>
+          <div className='fruitLink bananaImg' ><img className='fruitImg' onClick={clickHandler} src='/banana.png' alt='clickable bananas'/></div>
+          <div className='fruitLink mangoImg' ><img className='fruitImg' onClick={clickHandler} src='/mango.png' alt='clickable mango'/></div>
+          <div className='fruitLink orangeImg' ><img className='fruitImg' onClick={clickHandler} src='/orange.png' alt='clickable orange'/></div>
+          
       </div>
       <div className='bowlDiv'>
-        
-      </div> 
-    </div>
-        
-  );
-}
+        <img className='bowlImg' src='/bowl.png' alt='bowl' />
+      </div>
+      <div>
 
-export default FruitImages;
+      </div>
+    </div>
+    </div>
+  )
+}
+export default FruitImages
