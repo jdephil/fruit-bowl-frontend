@@ -1,39 +1,35 @@
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
 import './App.css'
 
+function TryThis({ match }) {
+  useEffect(() => {
+    fetchTip();
+    console.log(match)
+  })
 
-const TryThis = (props) => {
-  // const [tryData, setTryData] = useState({
-  //   name: '',
-  //   category: '',
-  //   url: '',
-  //   urlTitle: ''
-  // })
-  // const [error, setError] = useState(null)
+  const [tip, setTip] = useState({})
 
-  // useEffect(() => {
-  //   axios.get(`${process.env.REACT_APP_SERVER_URL}api/tips`, tryData)
-  //   .then((res) => {
-  //     console.log(res.data)
-  //   })
-  // })
-  console.log(props.tipsData)
- 
+  const fetchTip = async () => {
+    const fetchTip = await fetch(`http://fruitbowl-backend.herokuapp.com/api/tips/${match.params.id}`)
+
+    const tip = await fetchTip.json();
+    console.log(tip)
+    setTip(tip)
+
+  }
+
     return (
       <div className="tryThisContainer">
         <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
-        <h1 className="tryThisName">Try this: {props.tipsData.title}</h1>
-        {/* <img src for fruit /> */}
-        <a href={props.tipsData.url}>
+        <h1 className="tryThisName">Try this: {}</h1>
           <div className="learnMore">
               Learn more <span id="learnMoreArrow">&#62;</span>
           </div>
-        </a>
         <a href="#" id="tryAgain">Not interested? Try again!</a>
       </div>
     )
-  
 }
 
 export default TryThis;
