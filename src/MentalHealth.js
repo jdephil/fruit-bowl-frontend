@@ -1,17 +1,8 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
 import './App.css'
 
 function MentalHealth() {
-    const [tips, setTips] = useState([
-           
-            ]);
-            // const fetchTips = async () => {
-    //     const data = await fetch('http://fruitbowl-backend.herokuapp.com/api/tips');
-    //     const tips = await data.json();
-    //     setTips(tips)
-    // }
     const [tipP, setTipP] = useState([])
     let newArr = []
     useEffect(() => {
@@ -42,7 +33,7 @@ function MentalHealth() {
                     Learn more <span id="learnMoreArrow">&#62;</span>
                 </div>
             </a>
-          <a href="#" id="tryAgain">Not interested? Try again!</a>
+          <a href="/mentalhealth" id="tryAgain">Not interested? Try again!</a>
         </div>
       )
 }
