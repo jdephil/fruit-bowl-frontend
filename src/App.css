@@ -5,14 +5,6 @@ body {
 
 }
 
-*{
-  /* border: 1px solid pink; */
-}
-
-.header{
-  /* border: 2px solid green; */
-}
-
 .App-header {
   font-weight: bolder;
   display: flex;
@@ -53,14 +45,18 @@ body {
 }
 
 .grapesImg {
-  padding-left: 12px;
+  padding-left: 26px;
+  margin-bottom: 12px;
   font-size: 5px;
   overflow: hidden;
 }
 
+.orangeImg {
+  padding-right: 11px;
+}
 
 .bowlDiv {
-  margin-top: -80px;
+  margin-top: -75px;
   grid-row: 1;
   grid-column: 2/9;
   z-index: 2;
@@ -80,6 +76,7 @@ body {
   font-size: calc(10px + 2vmin);
   color: ghostwhite;
 }
+
 a {
   color: ghostwhite;
   text-decoration: none;
@@ -92,6 +89,12 @@ a {
 
 .tryThisName {
   padding: .5em;
+  text-align: center;
+}
+
+#imageForShowPage {
+  margin-top: -1.5em;
+  margin-bottom: 1.5em;
 }
 
 .learnMore {

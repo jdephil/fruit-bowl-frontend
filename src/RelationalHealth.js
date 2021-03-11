@@ -2,7 +2,7 @@ import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './App.css'
 
-function MentalHealth() {
+function RelationalHealth() {
     const [tipP, setTipP] = useState([])
     let newArr = []
     useEffect(() => {
@@ -13,7 +13,7 @@ function MentalHealth() {
         .then(function (response) {
               console.log(response.data)
               const result = response.data.map(function(tip) {
-                    if (tip.category === 'Mental Health') {
+                    if (tip.category === 'Relational Health') {
                       newArr.push(tip)
                   }    
             })
@@ -28,15 +28,15 @@ function MentalHealth() {
         <div className="tryThisContainer">
           <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
             <h1 className="tryThisName">Try this: {tipP.title}</h1>
-            <img src="/grapes.png" id="imageForShowPage"/>
+            <img src="/banana.png" id="imageForShowPage"/>
             <a href={tipP.url}>
                 <div className="learnMore">
                     Learn more <span id="learnMoreArrow">&#62;</span>
                 </div>
             </a>
-          <a href="/mentalhealth" id="tryAgain">Not interested? Try again!</a>
+          <a href="/relationalhealth" id="tryAgain">Not interested? Try again!</a>
         </div>
       )
 }
 
-export default MentalHealth;
+export default RelationalHealth;
