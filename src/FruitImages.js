@@ -35,7 +35,7 @@ function FruitImages() {
     return (
       <div>
         <div className='category'>
-          <Link onClick={linkClickHandler} to={toLink}>{categoryDiv}</Link>
+          <Link className='categoryLink' onClick={linkClickHandler} to={toLink}>{categoryDiv}</Link>
         </div>
         
       <div className="fruitbowl">

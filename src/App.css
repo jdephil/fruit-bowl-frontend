@@ -19,11 +19,15 @@ body {
   justify-content: center;
   align-items: center;
 }
+.categoryLink {
+  font-size: 2em;
+  margin-top: 10vh;
+}
 /* Fruitbowl Image */
 .fruitbowl {
   display: flex;
   flex-direction: column;
-  margin-top: 30vh;
+  margin-top: 15vh;
   justify-content: center;
   text-align: center;
 
