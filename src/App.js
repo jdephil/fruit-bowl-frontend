@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Switch>
            <Route exact path='/' component={Fruitbowl}  />
-           <Route exact path='/trythis' component={TryThis} />
+           {/* <Route exact path='/trythis' component={TryThis} /> */}
            <Route exact path='/mentalhealth' component={MentalHealth} />
            <Route exact path='/relationalhealth' component={RelationalHealth} />
            <Route exact path='/nutrition' component={Nutrition} />

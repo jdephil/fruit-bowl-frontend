@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
-import './App.css'
+import './TryThis.css'
+import Faves from './Faves'
 
 function MentalHealth() {
     const [tipP, setTipP] = useState([])
@@ -24,11 +25,14 @@ function MentalHealth() {
     if (!tipP) {
         return (<p>"loading"</p>)
     } 
+
+   
     return (
         <div className="tryThisContainer">
           <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
             <h1 className="tryThisName">Try this: {tipP.title}</h1>
-            <img src="/grapes.png" id="imageForShowPage"/>
+            <img src="/grapes.png" id="imageForShowPage" alt="grapes"/>
+            <Faves tipP={tipP}/>
             <a href={tipP.url}>
                 <div className="learnMore">
                     Learn more <span id="learnMoreArrow">&#62;</span>
