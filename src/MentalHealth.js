@@ -5,10 +5,13 @@ import Faves from './Faves'
 
 function MentalHealth() {
     const [tipP, setTipP] = useState([])
+
     let newArr = []
+
     useEffect(() => {
         fetchTips()
     }, []);
+
     const fetchTips = (callback) => {
         axios.get('http://fruitbowl-backend.herokuapp.com/api/tips')
         .then(function (response) {
@@ -26,13 +29,12 @@ function MentalHealth() {
         return (<p>"loading"</p>)
     } 
 
-   
     return (
         <div className="tryThisContainer">
-          <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
+            <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
             <h1 className="tryThisName">Try this: {tipP.title}</h1>
-            <img src="/grapes.png" id="imageForShowPage" alt="grapes"/>
             <Faves tipP={tipP}/>
+            <img src="/grapes.png" id="imageForShowPage" alt="grapes"/>
             <a href={tipP.url}>
                 <div className="learnMore">
                     Learn more <span id="learnMoreArrow">&#62;</span>
