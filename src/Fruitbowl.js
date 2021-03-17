@@ -5,6 +5,7 @@ import { useCookies } from 'react-cookie'
 
 function Fruitbowl() {
   const [userCookie, setUserCookie] = useCookies(["user"])
+  
 
   const handleUserCookie = () => {
     setUserCookie("user", "currentUser", {

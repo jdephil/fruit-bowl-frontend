@@ -1,0 +1,3 @@
+!Object.values(cookie).includes(`${props.tipP._id}`)
+
+&& faveArr.includes(`${props.tipP._id}`)
