@@ -3,12 +3,12 @@ import { useCookies } from 'react-cookie'
 import './faves.css'
 
 function Faves(props) {
-  const [cookie, setCookie] = useCookies(["faves"])
+  const [cookie, setCookie, removeCookie] = useCookies(["faves"])
   const [faved, setFaved] = useState(false)
   // const [faveArr, setFaveArr] = useState([])
 
   let faveArr = []
-  let cookies = document.cookie
+  // let cookies = document.cookie
 
 
   const handleFave = async(e) => {
@@ -20,22 +20,28 @@ function Faves(props) {
       document.querySelector('svg').style.fill = "#F1BB87"
       faveArr.push(props.tipP._id)
       console.log("added",faveArr)
-      // setCookie("faves", JSON.stringify(faveArr), {
-      //   path: "/",
-      //   expires: new Date('2032-12-31')
-      // })
-      document.cookie = `faves=${JSON.stringify(faveArr)}; expires=${new Date('2032-12-31')}; path=/`
-      console.log('added',cookies)
+      setCookie("faves", JSON.stringify(faveArr), {
+        path: "/",
+        expires: new Date('2032-12-31')
+      })
+      // document.cookie = `faves=${JSON.stringify(faveArr)}; expires=${new Date('2032-12-31')}; path=/`
+      console.log('added',cookie)
       console.log("faved",faved)
     } else if (faved === true ) {
       document.querySelector('svg').style.fill = "none"
       let index = faveArr.indexOf(`${props.tipP._id}`)
       faveArr.splice(index, 1)
       console.log('deleted',faveArr) 
-      document.cookie = `faves=${JSON.stringify(faveArr)}; expires=${new Date('2032-12-31')}; path=/`
+      removeCookie("faves")
+      setCookie("faves", JSON.stringify(faveArr), {
+        path: "/",
+        expires: new Date('2032-12-31')
+      })
+      // document.cookie = `faves= ; expires=${new Date('2000-12-31')}; path=/`
+      // document.cookie = `faves=${JSON.stringify(faveArr)}; expires=${new Date('2032-12-31')}; path=/`
       console.log("defaved",faved)
     setFaved(false)
-    console.log('deleted',cookies)
+    console.log('deleted',cookie)
     }
     
   }

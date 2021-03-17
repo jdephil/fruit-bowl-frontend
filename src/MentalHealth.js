@@ -40,7 +40,7 @@ function MentalHealth() {
                     Learn more <span id="learnMoreArrow">&#62;</span>
                 </div>
             </a>
-          <a href="/mentalhealth" id="tryAgain">Not interested? Try again!</a>
+          <button onClick={fetchTips} id="tryAgain">Not interested? Try again!</button>
         </div>
       )
 }

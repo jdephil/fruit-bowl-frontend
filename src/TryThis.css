@@ -57,4 +57,7 @@ a {
 #tryAgain {
   padding-top: 2em;
   text-decoration: underline;
+  background-color: #36075D;
+  color: ghostwhite;
+  border: none;
 }
