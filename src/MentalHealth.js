@@ -6,7 +6,7 @@ import FaveBtn from './FaveBtn'
 
 function MentalHealth() {
     const [tipP, setTipP] = useState([])
-    const [ faveCookie, setFaveCookie ] = useCookies([])
+    const [ faveCookie, setFaveCookie, remo ] = useCookies([])
     const [faves, setFaves] = useState([])
 
     let newArr = []
@@ -42,17 +42,19 @@ function MentalHealth() {
         let newFaves = [...faves]
         const faveIndex = newFaves.indexOf(tipP)
         console.log(faveIndex)
-        if (faveIndex >= 0) {
+        if (faveIndex >= 0 || newFaves.includes(tipP)) {
              newFaves.splice(faveIndex, 1)
-        } else if (newFaves.includes(tipP)) {
-            newFaves.splice(faveIndex, 1)
-        } else {
-            newFaves = [...newFaves, tipP]
-            setFaveCookie("faves", `${tipP._id}`, {
+             setFaveCookie("faves", JSON.stringify(newFaves), {
                 path: "/",
                 expires: new Date('2032-12-31')
             })
-        }
+        } else {
+            newFaves = [...newFaves, tipP]
+            setFaveCookie("faves", JSON.stringify(newFaves), {
+                path: "/",
+                expires: new Date('2032-12-31')
+            })
+        }   
         setFaves(newFaves)
         console.log(newFaves)
         
