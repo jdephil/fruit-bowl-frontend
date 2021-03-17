@@ -6,6 +6,7 @@ import RelationalHealth from './RelationalHealth'
 import Nutrition from './Nutrition'
 import Fitness from './Fitness'
 import TryThis from './TryThis'
+import Faves from './Faves'
 
 function App() {
 
@@ -15,10 +16,11 @@ function App() {
         <Switch>
            <Route exact path='/' component={Fruitbowl}  />
            {/* <Route exact path='/trythis' component={TryThis} /> */}
-           <Route exact path='/mentalhealth' component={MentalHealth} />
-           <Route exact path='/relationalhealth' component={RelationalHealth} />
-           <Route exact path='/nutrition' component={Nutrition} />
-           <Route exact path='/fitness' component={Fitness} />
+           <Route path='/mentalhealth' component={MentalHealth} />
+           <Route path='/relationalhealth' component={RelationalHealth} />
+           <Route path='/nutrition' component={Nutrition} />
+           <Route path='/fitness' component={Fitness} />
+           <Route path='/favorites' component={Faves} />
         </Switch>
       </BrowserRouter>
     </div>

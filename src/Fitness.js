@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './TryThis.css'
-import Faves from './Faves'
+import Faves from './FaveBtn'
 
 function Fitness() {
     const [tipP, setTipP] = useState([])

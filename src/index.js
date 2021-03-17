@@ -7,11 +7,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <Router>
-    <CookiesProvider>
+  <CookiesProvider>
+    <Router>
       <App />
-    </CookiesProvider>
-  </Router>,
+    </Router>,
+  </CookiesProvider>,
   document.getElementById('root')
 );
 
