@@ -16,7 +16,7 @@ function RelationalHealth() {
     }, []);
 
     const fetchTips = (callback) => {
-        axios.get('http://fruitbowl-backend.herokuapp.com/api/tips')
+        axios.get('https://fruitbowl-backend.herokuapp.com/api/tips')
         .then(function (response) {
               console.log(response.data)
               for (let i = 0; i < response.data.length; i++) {
