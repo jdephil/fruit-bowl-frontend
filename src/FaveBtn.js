@@ -1,16 +1,24 @@
-import { useState } from 'react';
-import { useCookies } from 'react-cookie'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 import './faves.css'
 
 function FaveBtn(props) {
 
   let heartFillToggle = props.isFave ? 'heartFilled' : 'heartEmpty'
- 
+  
   const handleClick = (e) => {
-    e.stopPropagation()
+   
+    e.preventDefault()
     console.log("handling")
     props.onFaveToggle(props.tipP._id)
+    
+    if (props.isFave) {
+      axios.post('http://localhost:8001/api/favorites', props.faves)
+    }
+  }
+
+  const formSubmit = (e) => {
+    e.preventDefault()
   }
   
    return (
@@ -21,8 +29,11 @@ function FaveBtn(props) {
           <path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
         </svg>
       </button>
-      <Link faveCookie={props.faveCookie} to='/favorites'>link</Link>
-    </div>
+      <form onSubmit={formSubmit}>
+        <input id="inputData" type="hidden" name="favorites" value="" />
+      </form>
+      <Link to='/favorites'>link</Link>
+     </div>
   );
 }
 export default FaveBtn;
