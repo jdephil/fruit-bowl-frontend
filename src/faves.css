@@ -5,11 +5,17 @@ svg{
   
 }
 
-/* svg:hover {
-  fill: #F1BB87;
-} */
+
 .faveBtn {
   background-color: #36075D;
   border: none;
   border-radius: 100px;
+}
+
+.heartFilled {
+  fill: #F1BB87;
+}
+
+.heartEmpty {
+  fill: none;
 }

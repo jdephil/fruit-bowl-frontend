@@ -6,7 +6,7 @@ import FaveBtn from './FaveBtn'
 
 function MentalHealth() {
     const [tipP, setTipP] = useState([])
-    const [ faveCookie, setFaveCookie, remo ] = useCookies([])
+    const [ mentalFaveCookie, setmentalFaveCookie ] = useCookies([])
     const [faves, setFaves] = useState([])
 
     let newArr = []
@@ -21,17 +21,9 @@ function MentalHealth() {
               console.log(response.data)
               for (let i = 0; i < response.data.length; i++) {
                 if (response.data[i].category === 'Mental Health') {
-                    //console.log(response.data[i])
                     newArr.push(response.data[i])
                 } 
-
               }
-            //   const result = response.data.map(function(tip) {
-            //     if (tip.category === 'Mental Health') {
-            //         newArr.push(tip)
-            //     } 
-            //       return( <)   
-            // })
         }).then (() => {
             setTipP(newArr[Math.floor(Math.random() * newArr.length)])
         })
@@ -44,13 +36,13 @@ function MentalHealth() {
         console.log(faveIndex)
         if (faveIndex >= 0 || newFaves.includes(tipP)) {
              newFaves.splice(faveIndex, 1)
-             setFaveCookie("faves", JSON.stringify(newFaves), {
+             setmentalFaveCookie("faves", JSON.stringify(newFaves), {
                 path: "/",
                 expires: new Date('2032-12-31')
             })
         } else {
             newFaves = [...newFaves, tipP]
-            setFaveCookie("faves", JSON.stringify(newFaves), {
+            setmentalFaveCookie("faves", JSON.stringify(newFaves), {
                 path: "/",
                 expires: new Date('2032-12-31')
             })
@@ -59,16 +51,6 @@ function MentalHealth() {
         console.log(newFaves)
         
     }
-
-    const emptyCookie = () => {
-        if (!faveCookie) {
-            setFaveCookie([])
-            console.log("cookie set")
-        }
-    }
-
-    emptyCookie()
-
     
     if (!tipP) {
         return (<p>loading...</p>)
@@ -78,7 +60,7 @@ function MentalHealth() {
         <div className="tryThisContainer">
             <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
             <h1 className="tryThisName">Try this: {tipP.title}</h1>
-            <FaveBtn onFaveToggle={onFaveToggle} tipP={tipP}/>
+            <FaveBtn onFaveToggle={onFaveToggle} isFave={faves.includes(tipP._id)} tipP={tipP} faveCookie={mentalFaveCookie}/>
             <img src="/grapes.png" id="imageForShowPage" alt="grapes"/>
             <a href={tipP.url}>
                 <div className="learnMore">
