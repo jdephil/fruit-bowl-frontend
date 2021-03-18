@@ -8,8 +8,10 @@ function MentalHealth() {
     const [tipP, setTipP] = useState([])
     const [ mentalFaveCookie, setMentalFaveCookie ] = useCookies([])
     const [faves, setFaves] = useState([])
+    
 
     let newArr = []
+    
 
     useEffect(() => {
         fetchTips()
@@ -48,6 +50,7 @@ function MentalHealth() {
             })
         }   
         setFaves(newFaves)
+        console.log(faves)
         console.log(newFaves)
         
     }
