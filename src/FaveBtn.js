@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 import './faves.css'
 
@@ -11,16 +10,9 @@ function FaveBtn(props) {
     e.preventDefault()
     console.log("handling")
     props.onFaveToggle(props.tipP)
-    
-    
-    // axios.post('http://localhost:8001/api/favorites', props.faves)
-    
+ 
   }
 
-  // const formSubmit = (e) => {
-  //   e.preventDefault()
-  // }
-  
    return (
     <div className="favesDiv">
       <button className="faveBtn" onClick={(e) => {handleClick(e)}}>
@@ -29,9 +21,6 @@ function FaveBtn(props) {
           <path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
         </svg>
       </button>
-      {/* <form onSubmit={formSubmit}>
-        <input id="inputData" type="hidden" name="favorites" value="" />
-      </form> */}
       <Link to='/favorites'>link</Link>
      </div>
   );
