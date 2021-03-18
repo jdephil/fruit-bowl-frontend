@@ -8,7 +8,6 @@ function MentalHealth() {
     const [tipP, setTipP] = useState([])
     const [ mentalFaveCookie, setMentalFaveCookie ] = useCookies([])
     const [faves, setFaves] = useState([])
-    
 
     let newArr = []
     
@@ -63,7 +62,7 @@ function MentalHealth() {
         <div className="tryThisContainer">
             <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
             <h1 className="tryThisName">Try this: {tipP.title}</h1>
-            <FaveBtn onFaveToggle={onFaveToggle} faves={faves} isFave={faves.includes(tipP._id)} tipP={tipP} faveCookie={mentalFaveCookie}/>
+            <FaveBtn onFaveToggle={onFaveToggle} faves={faves} isFave={faves.includes(tipP._id)} tipP={tipP._id} faveCookie={mentalFaveCookie}/>
             <img src="/grapes.png" id="imageForShowPage" alt="grapes"/>
             <a href={tipP.url}>
                 <div className="learnMore">
