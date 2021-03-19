@@ -20,7 +20,7 @@ function Fruitbowl() {
    
   return (
     <div className="home-page">
-      <header className='App-header'>fruitbowl</header>
+      <h1 className='App-header'>fruitbowl</h1>
       <div className="fruitsnbowl">
         <FruitImages />
       </div>
