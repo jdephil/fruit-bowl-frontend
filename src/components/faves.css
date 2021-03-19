@@ -1,10 +1,11 @@
+/** FAVE BUTTON **/
+
 svg{
   width: 50px;
   height: 50px;
   
   
 }
-
 
 .faveBtn {
   background-color: #36075D;
@@ -18,4 +19,34 @@ svg{
 
 .heartEmpty {
   fill: none;
+}
+
+/** FAVE PAGE **/
+
+.tryThisName {
+  padding: .5em;
+  text-align: center;
+}
+
+.learnMore {
+  background-color: #F1BB87;
+  color: #363636;
+  font-size: 1.25em;
+  border-radius: 12px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  width: 299px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#learnMoreLink {
+  color: #363636;
+}
+
+#learnMoreArrow {
+  font-size: 1.5em;
+  margin-top: .1em;
+  padding-left: .5em;
 }

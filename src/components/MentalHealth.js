@@ -4,20 +4,22 @@ import { useCookies } from 'react-cookie'
 import './TryThis.css'
 import FaveBtn from './FaveBtn'
 
+
 function MentalHealth() {
+    require('dotenv').config();
+
     const [tipP, setTipP] = useState([])
     const [ mentalFaveCookie, setMentalFaveCookie ] = useCookies([])
     const [faves, setFaves] = useState([])
 
     let newArr = []
     
-
     useEffect(() => {
         fetchTips()
     }, []);
 
     const fetchTips = (callback) => {
-        axios.get('http://localhost:8001/api/tips')
+        axios.get(process.env.REACT_APP_LOCAL_SERVER_URL)
         .then(function (response) {
               console.log(response.data)
               for (let i = 0; i < response.data.length; i++) {

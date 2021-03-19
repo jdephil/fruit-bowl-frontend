@@ -1,9 +1,12 @@
 import Cookies from 'js-cookie'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import './faves.css'
 
 
 function Faves(props) {
+  require('dotenv').config();
+
   const [tipResponse, setTipResponse] = useState([])
   //*** RENDER TIPS FROM TIPSDATA.JS BASED ON CURRENT COOKIES */
   
@@ -19,7 +22,7 @@ function Faves(props) {
     }, []);
 
   const fetchFaves = (callback) => {
-    axios.post('http://localhost:8001/api/favorites', {values: cookieValues})
+    axios.post(process.env.REACT_APP_LOCAL_FAVES_URL, {values: cookieValues})
     .then(function (response) {
           console.log(response.data)
           setTipResponse(response.data)
@@ -30,9 +33,13 @@ function Faves(props) {
       console.log(tipResponse)
       const allFaves = tipResponse.map((fave, i) => {
         return (
-          <div>
-          <h2 key={`title-${i}`}>{fave.title}</h2>
-          <p key={`url-${i}`}>{fave.url}</p>
+          <div className="tryThisContainer">
+            <h2 className="tryThisName" key={`title-${i}`}>{fave.title}</h2>
+            <a href={fave.url}>
+              <div className="learnMore">
+                Learn more <span id="learnMoreArrow">&#62;</span>
+              </div>
+            </a>
           </div>
         )
       })
