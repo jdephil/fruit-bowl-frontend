@@ -1,6 +1,8 @@
 import Cookies from 'js-cookie'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import LazyLoad from 'react-lazyload'
+import 'lazysizes';
 import './faves.css'
 
 
@@ -33,21 +35,35 @@ function Faves(props) {
       console.log(tipResponse)
       const allFaves = tipResponse.map((fave, i) => {
         return (
-          <div className="tryThisContainer">
-            <h2 className="tryThisName" key={`title-${i}`}>{fave.title}</h2>
-            <a href={fave.url}>
-              <div className="learnMore">
+           
+            <div className="faveContainer lazyload" key={`fave-${i}`}>
+          
+            <h3 className="faveName" key={`fave-${i}`}>{fave.title}</h3>
+            
+            
+            <a  href={fave.url} key={`fave-${i}`}>
+            
+              <div className="learnMoreFaves" key={`fave-${i}`}>
                 Learn more <span id="learnMoreArrow">&#62;</span>
               </div>
+              
             </a>
+            
           </div>
+           
         )
       })
   //lazy load favs
    
   return (
     <div className="favorites">
-      {allFaves}
+      <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
+      <main className="cardsContainer">
+      
+        {allFaves} 
+        
+
+      </main>
     </div>
   );
 }

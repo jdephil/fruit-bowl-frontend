@@ -5,6 +5,8 @@ import './TryThis.css'
 import FaveBtn from './FaveBtn'
 
 function RelationalHealth() {
+    require('dotenv').config();
+
     const [tipP, setTipP] = useState([])
     const [ faveCookie, setFaveCookie ] = useCookies([])
     const [faves, setFaves] = useState([])
@@ -16,7 +18,7 @@ function RelationalHealth() {
     }, []);
 
     const fetchTips = (callback) => {
-        axios.get('https://fruitbowl-backend.herokuapp.com/api/tips')
+        axios.get(process.env.REACT_APP_LOCAL_SERVER_URL)
         .then(function (response) {
               console.log(response.data)
               for (let i = 0; i < response.data.length; i++) {
@@ -27,7 +29,6 @@ function RelationalHealth() {
         }).then (() => {
             setTipP(newArr[Math.floor(Math.random() * newArr.length)])
         })
-        document.querySelector('svg').style.fill = "none"
     }
 
     const onFaveToggle = (tipP) => {
@@ -36,21 +37,20 @@ function RelationalHealth() {
         const faveIndex = newFaves.indexOf(tipP)
         console.log(faveIndex)
         if (faveIndex >= 0 || newFaves.includes(tipP)) {
-            document.querySelector('svg').style.fill = "none"
-            newFaves.splice(faveIndex, 1)
-            setFaveCookie("faves", JSON.stringify(newFaves), {
+             newFaves.splice(faveIndex, 1)
+             setMentalFaveCookie("mentalFaves", JSON.stringify(newFaves), {
                 path: "/",
                 expires: new Date('2032-12-31')
             })
         } else {
-            document.querySelector('svg').style.fill = "#F1BB87"
             newFaves = [...newFaves, tipP]
-            setFaveCookie("faves", JSON.stringify(newFaves), {
+            setMentalFaveCookie("mentalFaves", JSON.stringify(newFaves), {
                 path: "/",
                 expires: new Date('2032-12-31')
             })
         }   
         setFaves(newFaves)
+        console.log(faves)
         console.log(newFaves)
         
     }

@@ -27,7 +27,7 @@ function FruitImages() {
           <Link className='categoryLink' to={toLink}>{categoryDiv}</Link>
         </div>
         
-        <div className="fruitbowl">
+        <main className="fruitbowl">
           <div className="fruitLinksDiv">
             <div className='fruitLink grapesImg'><img className='fruitImg' onClick={clickHandler} src='/grapes.png' alt='clickable grapes' /></div>
             <div className='fruitLink bananaImg' ><img className='fruitImg' onClick={clickHandler} src='/banana.png' alt='clickable bananas'/></div>
@@ -39,7 +39,7 @@ function FruitImages() {
           </div>
             <div>
           </div>
-        </div>
+        </main>
 
       </div>
   )

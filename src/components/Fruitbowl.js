@@ -21,9 +21,9 @@ function Fruitbowl() {
   return (
     <div className="home-page">
       <h1 className='App-header'>fruitbowl</h1>
-      <div className="fruitsnbowl">
+      <main className="fruitsnbowl">
         <FruitImages />
-      </div>
+      </main>
     </div>
   );
 }

@@ -22,23 +22,43 @@ svg{
 }
 
 /** FAVE PAGE **/
+.cardsContainer {
+  display: block;
+  flex-wrap: wrap;
+}
 
-.tryThisName {
+.faveContainer {
+  background-color: #5F2B89;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: ghostwhite;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.faveName {
   padding: .5em;
   text-align: center;
 }
 
-.learnMore {
+.learnMoreFaves {
   background-color: #F1BB87;
   color: #363636;
-  font-size: 1.25em;
+  font-size: 1em;
   border-radius: 12px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  width: 299px;
-  height: 100px;
+  width: 200px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 #learnMoreLink {
