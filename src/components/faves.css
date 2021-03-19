@@ -43,8 +43,12 @@ svg{
 }
 
 .faveName {
-  padding: .5em;
+  padding-top: .5em;
   text-align: center;
+}
+
+.faveCat {
+  margin-top: 0;
 }
 
 .learnMoreFaves {

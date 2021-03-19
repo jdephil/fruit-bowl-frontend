@@ -38,13 +38,13 @@ function RelationalHealth() {
         console.log(faveIndex)
         if (faveIndex >= 0 || newFaves.includes(tipP)) {
              newFaves.splice(faveIndex, 1)
-             setMentalFaveCookie("mentalFaves", JSON.stringify(newFaves), {
+             setFaveCookie("faves", JSON.stringify(newFaves), {
                 path: "/",
                 expires: new Date('2032-12-31')
             })
         } else {
             newFaves = [...newFaves, tipP]
-            setMentalFaveCookie("mentalFaves", JSON.stringify(newFaves), {
+            setFaveCookie("faves", JSON.stringify(newFaves), {
                 path: "/",
                 expires: new Date('2032-12-31')
             })
@@ -62,7 +62,7 @@ function RelationalHealth() {
         <div className="tryThisContainer">
           <a href="/" id="goBack">&#60; Back to Fruit Bowl</a>
             <h1 className="tryThisName">Try this: {tipP.title}</h1>
-            <FaveBtn onFaveToggle={onFaveToggle} tipP={tipP} faveCookie={faveCookie}/>
+            <FaveBtn onFaveToggle={onFaveToggle} faves={faves} isFave={faves.includes(tipP._id)} tipP={tipP._id} faveCookie={faveCookie}/>
             <img src="/banana.png" id="imageForShowPage" alt="banana"/>
             <a href={tipP.url}>
                 <div className="learnMore">

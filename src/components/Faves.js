@@ -15,7 +15,8 @@ function Faves(props) {
   //** ACCESS COOKIES */
  
   let cookieValues = Cookies.get('mentalFaves')
-   //console.log(cookieValues)
+  let relCookieValues = Cookies.get('faves')
+   console.log(relCookieValues)
 
   //** ACCESS & FILTER DATA */
   
@@ -24,7 +25,7 @@ function Faves(props) {
     }, []);
 
   const fetchFaves = (callback) => {
-    axios.post(process.env.REACT_APP_LOCAL_FAVES_URL, {values: cookieValues})
+    axios.post(process.env.REACT_APP_LOCAL_FAVES_URL, {values: cookieValues, relValues: relCookieValues})
     .then(function (response) {
           console.log(response.data)
           setTipResponse(response.data)
@@ -36,14 +37,14 @@ function Faves(props) {
       const allFaves = tipResponse.map((fave, i) => {
         return (
            
-            <div className="faveContainer lazyload" key={`fave-${i}`}>
+            <div className="faveContainer lazyload" key={fave.id}>
           
-            <h3 className="faveName" key={`fave-${i}`}>{fave.title}</h3>
+            <h3 className="faveName" key={fave.id}>{fave.title}</h3>
             
+            <p className="faveCat" key={`title-${i}`}>{fave.category}</p>
+            <a  href={fave.url} key={`utl-${i}`}>
             
-            <a  href={fave.url} key={`fave-${i}`}>
-            
-              <div className="learnMoreFaves" key={`fave-${i}`}>
+              <div className="learnMoreFaves" key={`div-${i}`}>
                 Learn more <span id="learnMoreArrow">&#62;</span>
               </div>
               
